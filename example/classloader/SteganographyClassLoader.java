@@ -1,6 +1,6 @@
 package example.classloader;
 
-import java.io.IOException;
+import java.awt.image.BufferedImage;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
@@ -33,11 +33,10 @@ public class SteganographyClassLoader extends ClassLoader {
             byte[] bytes = encoder.decodeByteArray();
             return this.defineClass(name, bytes, 0, bytes.length);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new ClassNotFoundException();
         }
 
     }
-
 
 }

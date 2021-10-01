@@ -18,15 +18,61 @@ SteganographyClassLoader 是一个自定义的 ClassLoader。它重写 ClassLoad
 
 还好改回去也很容易。。但因为我写的三个排序有两个不是 Swap-based 所以我可能得再写一个简单的，就写个垃圾排序吧，好像是叫简单选择排序
 
+本来还自己写了生成图片的代码，结果后来才发现有个 Factory 类，结果是一样的
 
+一开始确实是意识到 example 貌似不能运行，所以等了等哈哈哈
 
+```java
+public static void main(String[] args) throws IOException {
+    SteganographyFactory.getSteganography("S191220080/QuickSorter.java", 
+                                          "S191220080/resources/Picture.jpg");
+    SteganographyFactory.getSteganography("S191220080/SimpleSelectionSorter.java", 
+                                          "S191220080/resources/Picture.jpg");
 
+}
+```
+
+以上代码可以生成所需的图片。
 
 
 
 ## 3. 还原并使用
 
+我们现在先移除 QuickSorter.java 与 SimpleSelectionSorter.java，然后用我的图片试试
 
+![image-20211001235824914](E:\jw03-PandaAwAke\S191220080\Readme.assets\image-20211001235824914.png)
+
+#### 使用 QuickSorter
+
+```java
+SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
+	"https://box.nju.edu.cn/seafhttp/files/926807ea-031d-4871-a0e5-893902f6a45d/S191220080.QuickSorter.png"));
+Class c = loader.loadClass("S191220080.QuickSorter");
+```
+
+#### 使用 SimpleSelectionSorter
+
+```java
+SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
+	"https://box.nju.edu.cn/seafhttp/files/75233d3b-3762-4ed8-b790-1466e77e4e43/S191220080.SimpleSelectionSorter.png"));
+Class c = loader.loadClass("S191220080.SimpleSelectionSorter");
+```
+
+
+
+结果可以运行！
+
+快速排序图片：https://box.nju.edu.cn/seafhttp/files/926807ea-031d-4871-a0e5-893902f6a45d/S191220080.QuickSorter.png
+
+简单选择排序图片：https://box.nju.edu.cn/seafhttp/files/75233d3b-3762-4ed8-b790-1466e77e4e43/S191220080.SimpleSelectionSorter.png
+
+
+
+#### 视频结果
+
+快速排序视频：https://asciinema.org/a/5h3nR7p6zu0shmG8aiESGAagK
+
+简单选择排序视频：https://asciinema.org/a/UyeZi3f9XixyvBbYr77fFqmjf
 
 
 

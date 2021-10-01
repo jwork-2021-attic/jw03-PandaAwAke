@@ -25,14 +25,14 @@ public class SteganographyFactory {
         SteganographyEncoder steganographyEncoder = new SteganographyEncoder(image);
 
         BufferedImage encodedImage = steganographyEncoder.encodeFile(new File(classSource.replace("java", "class")));
-        ImageIO.write(encodedImage, "png", new File(className+".png"));
+        ImageIO.write(encodedImage, "png", new File(className + ".png"));
 
     }
 
     public static void main(String[] args) throws IOException {
-
-        SteganographyFactory.getSteganography("S191220080/SwapBasedQuickSorter.java","S191220080/resources/Picture.png");
-        SteganographyFactory.getSteganography("S191220080/SimpleSelectionSorter.java","S191220080/resources/Picture.png");
+        SteganographyFactory.getSteganography("S191220080/QuickSorter.java", "S191220080/resources/Picture.jpg");
+        SteganographyFactory.getSteganography("S191220080/SimpleSelectionSorter.java",
+                "S191220080/resources/Picture.jpg");
 
     }
 

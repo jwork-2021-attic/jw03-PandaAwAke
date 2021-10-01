@@ -7,7 +7,6 @@ import java.net.URL;
 
 import S191220080.classloader.SteganographyClassLoader;
 
-
 import S191220080.encoder.SteganographyEncoder;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -23,24 +22,8 @@ import java.util.Arrays;
 public class Scene {
 
     public static void main(String[] args) throws Exception {
-        
+
         // // Generation
-
-        // BufferedImage img;
-        // SteganographyEncoder encoder;
-
-        // img = ImageIO.read(new URL("https://box.nju.edu.cn/seafhttp/files/12f7d36d-aa23-4f1b-90e2-fb0ad9ee49d7/Picture.png"));
-        // encoder = new SteganographyEncoder(img);
-        // img = encoder.encodeFile(new File("S191220080/SimpleSelectionSorter.class"));
-        // ImageIO.write(img, "png", new File("S191220080/SimpleSelectionSorter.png"));
-
-        // img = ImageIO.read(new URL("https://box.nju.edu.cn/seafhttp/files/12f7d36d-aa23-4f1b-90e2-fb0ad9ee49d7/Picture.png"));
-        // encoder = new SteganographyEncoder(img);
-        // img = encoder.encodeFile(new File("S191220080/SwapBasedQuickSorter.class"));
-        // ImageIO.write(img, "png", new File("S191220080/SwapBasedQuickSorter.png"));
-
-
-
         Line line = new Line(7);
         line.put(Gourd.ONE, 6);
         line.put(Gourd.TWO, 3);
@@ -52,11 +35,13 @@ public class Scene {
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        SteganographyClassLoader loader = new SteganographyClassLoader(
-                new URL("file:///C:/S191220080.SwapBasedQuickSorter.png"));
-        
-        Class c = loader.loadClass("S191220080.SwapBasedQuickSorter");
+        SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
+                "https://box.nju.edu.cn/seafhttp/files/926807ea-031d-4871-a0e5-893902f6a45d/S191220080.QuickSorter.png"));
+        Class c = loader.loadClass("S191220080.QuickSorter");
 
+        // SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
+        // "https://box.nju.edu.cn/seafhttp/files/75233d3b-3762-4ed8-b790-1466e77e4e43/S191220080.SimpleSelectionSorter.png"));
+        // Class c = loader.loadClass("S191220080.SimpleSelectionSorter");
 
         Sorter sorter = (Sorter) c.newInstance();
 
