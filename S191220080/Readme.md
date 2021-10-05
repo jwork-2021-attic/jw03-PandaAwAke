@@ -77,3 +77,9 @@ Class c = loader.loadClass("S191220080.SimpleSelectionSorter");
 
 
 ## 4. 使用别人的
+
+这里从 Github 仓库偷了 haibara4869 同学的 example.SelectSorter.png。
+
+图片地址被我重新生成：https://box.nju.edu.cn/seafhttp/files/a9399862-fcaa-42ae-81a6-e9a7966aaf22/example.SelectSorter.png
+
+大家好像使用的都是 example 包名。。我在 S191220080 目录下跑不通，这也正常，所以我就在 example 里跑了。结果正常。

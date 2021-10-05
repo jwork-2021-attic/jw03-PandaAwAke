@@ -35,13 +35,13 @@ public class Scene {
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
-                "https://box.nju.edu.cn/seafhttp/files/926807ea-031d-4871-a0e5-893902f6a45d/S191220080.QuickSorter.png"));
-        Class c = loader.loadClass("S191220080.QuickSorter");
-
         // SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
-        // "https://box.nju.edu.cn/seafhttp/files/75233d3b-3762-4ed8-b790-1466e77e4e43/S191220080.SimpleSelectionSorter.png"));
-        // Class c = loader.loadClass("S191220080.SimpleSelectionSorter");
+        // "https://box.nju.edu.cn/seafhttp/files/926807ea-031d-4871-a0e5-893902f6a45d/S191220080.QuickSorter.png"));
+        // Class c = loader.loadClass("S191220080.QuickSorter");
+
+        SteganographyClassLoader loader = new SteganographyClassLoader(new URL(
+                "https://box.nju.edu.cn/seafhttp/files/75233d3b-3762-4ed8-b790-1466e77e4e43/S191220080.SimpleSelectionSorter.png"));
+        Class c = loader.loadClass("S191220080.SimpleSelectionSorter");
 
         Sorter sorter = (Sorter) c.newInstance();
 
